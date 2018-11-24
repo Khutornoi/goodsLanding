@@ -20,6 +20,16 @@
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
   color: #555555;
+  text-align: center;
+
+  img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+  }
+  span {
+    line-height: 1.2rem;
+  }
 }
 
 /* The Close Button */

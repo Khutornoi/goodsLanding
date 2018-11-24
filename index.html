@@ -9,6 +9,7 @@
     <!--<link rel="stylesheet" href="./css/hover.css">-->
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <script src="./js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <header class="top-container" style="background-image: url(./img/top-background.jpg); background-size: cover; background-repeat: no-repeat">
@@ -26,7 +27,7 @@
                 <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
                 <div class="price">PRICE</div>
                 <div class="countdown">04:18:24</div>
-                <div id="purchase-btn" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
+                <div id="purchase-btnT" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
                     <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
                 </div>
             </section>
@@ -37,7 +38,7 @@
     </header>
     <section class="description-section" style="background-image: url(./img/description-bacground.jpg)">
         <div class="descr"><img src="./img/descr-img-1.png" alt="" class="img-descr">
-            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim eum excepturi illum libero molestias sit velit veritatis? Ad animi consequatur delectus eveniet facilis inventore laborum perspiciatis porro repellat reprehenderit!
+            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim eum excepturi illum libero molestias sit velit veritatis?
             </div>
         </div>
         <div class="descr"><img src="./img/descr-img-2.png" alt="" class="img-descr">
@@ -100,7 +101,7 @@
             <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
             <div class="price">PRICE</div>
             <div class="countdown">04:18:24</div>
-            <div id="purchase-btn-f" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
+            <div id="purchase-btnB" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
                 <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
             </div>
         </section>
@@ -117,12 +118,34 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <p>Купи слона!</p>
-            <form action="#">
-                <label>Введите Ваш номер телефона: <input type="text" placeholder="Номер телефона"></label>
-                <label>Введите ФИО:<input type="text" placeholder="Фамилия Имя Отчество"></label>
-                <label>Город и отделение "Новой Почты"<input type="text" placeholder="Город, № отделения"></label>
-                <input type="submit">
+            <form id="formPurchase" action="#">
+                <label>Введите Ваш номер телефона: <input type="text" name="phone" placeholder="Номер телефона" value="+380112223344"></label>
+                <label>Введите ФИО:<input type="text" name="customerName" placeholder="Фамилия Имя Отчество" value="Самусенко Геннадий Валентинович"></label>
+                <label>Город и отделение "Новой Почты"<input type="text" name="address" placeholder="Город, № отделения" value="Киев 1"></label>
+                <input id="btnSend" type="submit">
             </form>
+        </div>
+    </div>
+    <div id="modalOk" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./img/ok.png" alt="OK!">
+            <div class="mod-stat">
+                <span>Ваш заказ принят!</span><br/>
+                <span>Наш менеджер свяжется с вами в ближайшее время</span><br/>
+                <span>Спасибо за покупку!</span>
+            </div>
+        </div>
+    </div>
+    <div id="modalBad" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="./img/sorry.png" alt="OK!">
+            <div class="mod-stat">
+                <span>Возникла ошибка связи...</span>
+                <span>Попробуйте повторить заказ позже</span>
+            </div>
+
         </div>
     </div>
     <script src="js/script.js"></script>
