@@ -3,8 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="./css/hover.css">-->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
 </head>
 <body>
+    <header class="top-container" style="background-image: url(./img/top-background.jpg); background-size: cover; background-repeat: no-repeat">
+        <nav class="navigation" style="  color: rgb(14, 126, 227); background-color: rgba(24, 24, 24, 0.69)">
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu-item">ОПИСАНИЕ</div>
+            <div class="menu-item">ДОСТАВКА</div>
+            <div class="menu-item">ОТЗЫВЫ</div>
+        </nav>
+        <main class="main-container">
+            <section class="goods-title">
+                <h1>Н1 - Название ТОВАРА</h1>
+                <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
+                <div class="price">PRICE</div>
+                <div class="countdown">04:18:24</div>
+                <div id="purchase-btn" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
+                    <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
+                </div>
+            </section>
+            <section class="main-photo">
+                <img src="./img/main-photo.png" alt="goods">
+            </section>
+        </main>
+    </header>
+    <section class="description-section" style="background-image: url(./img/description-bacground.jpg)">
+        <div class="descr"><img src="./img/descr-img-1.png" alt="" class="img-descr">
+            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim eum excepturi illum libero molestias sit velit veritatis? Ad animi consequatur delectus eveniet facilis inventore laborum perspiciatis porro repellat reprehenderit!
+            </div>
+        </div>
+        <div class="descr"><img src="./img/descr-img-2.png" alt="" class="img-descr">
+            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut beatae commodi debitis deserunt distinctio dolor dolore doloremque doloribus ea earum est eveniet facilis minus molestiae nostrum quod reprehenderit soluta, vitae?</div>
+        </div>
+        <div class="descr"><img src="./img/descr-img-3).png" alt="" class="img-descr">
+            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at cum dignissimos dolor error facilis harum inventore ipsum iure libero magni natus obcaecati perferendis quae, repellendus suscipit, vel veritatis voluptate.</div>
+        </div>
+        <div class="descr"><img src="./img/descr-img-4.png" alt="" class="img-descr">
+            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aut, cum cupiditate dolorem, eos iste laboriosam molestiae molestias mollitia nemo officiis quasi quibusdam quis, quod ratione similique tempora vitae.</div>
+        </div>
+        <div class="descr"><img src="./img/descr-img-5.png" alt="" class="img-descr">
+            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium ad asperiores impedit libero magnam numquam quaerat, quia quibusdam saepe similique veritatis. Aliquid culpa hic nulla officiis provident similique voluptate?</div>
+        </div>
+        <div class="descr"><img src="./img/descr-img-6.png" alt="" class="img-descr">
+            <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloribus, reprehenderit? Ab delectus dolorum iste laudantium minus nihil optio quasi reiciendis suscipit tempora, vitae voluptatibus voluptatum. At hic nobis totam!</div>
+        </div>
+    </section>
+    <section class="feedback" style="background-image: url(./img/feedback-bg.jpg)">
+        <div class="feed-title">ОТЗЫВЫ ПОКУПАТЕЛЕЙ</div>
+        <div class="feed-item"><div style="background-image: url(./img/customer-1.jpg)" class="feed-img"></div>
+            <div class="feed-content">
+                <div class="feed-name">Иван Петренко</div>
+                <div class="feed-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur at beatae consequuntur cumque ea, earum est illum itaque magnam maiores necessitatibus perspiciatis, ratione, reiciendis reprehenderit vel voluptatibus! Dicta, maiores.</div>
+            </div>
+        </div>
+        <div class="feed-item">
+            <div style="background-image: url(./img/customer-2.jpg)" class="feed-img"></div>
+            <div class="feed-content">
+                <div class="feed-name">Степан Бондаренко</div>
+                <div class="feed-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem consectetur quis ullam unde. A ab aperiam ipsum iure, magnam molestiae non pariatur repellat, reprehenderit sint sunt temporibus totam voluptatibus.</div>
+            </div>
+        </div>
+        <div class="feed-item"><div style="background-image: url(./img/customer-3.jpg)" class="feed-img"></div>
+            <div class="feed-content">
+                <div class="feed-name">Тарас Шевченко</div>
+                <div class="feed-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid beatae consequatur cupiditate facilis id itaque laudantium magni necessitatibus nemo, nihil nisi nulla optio praesentium sunt tempora tempore temporibus vero voluptate!</div>
+            </div>
+        </div>
+    </section>
 
+    <section class="delivery" style="background-image: url(./img/delivery_bg.jpg)">
+        <div class="delivery-title">Доставка и оплата:</div>
+        <div class="delivery-delivery">
+            <strong>Доставка по Украине 1-2 дня!!! </strong>
+            <strong>Оплата по факту получения товара</strong>
+            <strong>- Доставка отправляем «Новая Почта», которая имеет отделения более чем в 1000 населённых пунктах Украины</strong>
+            <strong>- Ваш заказ отправляется наложенным платежом (т.е. оплата при получении)</strong>
+        </div>
+        <div class="delivery-payment">
+            <strong>- Возможна оплата на карточку Приват Банка (Вы экономите на комисии за отправку денег) </strong>
+            <strong>Для получения посылки на почте при себе нужно иметь документ, удостоверяющий личность (паспорт или водительские права) и номер декларации</strong>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
