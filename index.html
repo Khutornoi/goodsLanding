@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -20,8 +21,8 @@
             <div class="menu-item">ОТЗЫВЫ</div>
         </nav>
         <main class="main-container">
-            <section class="goods-title">
-                <h1>Н1 - Название ТОВАРА</h1>
+            <section class="goods-text">
+                <div class="goods-title"><h1>Н1 - Название ТОВАРА</h1></div>
                 <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
                 <div class="price">PRICE</div>
                 <div class="countdown">04:18:24</div>
@@ -55,7 +56,7 @@
             <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloribus, reprehenderit? Ab delectus dolorum iste laudantium minus nihil optio quasi reiciendis suscipit tempora, vitae voluptatibus voluptatum. At hic nobis totam!</div>
         </div>
     </section>
-    <section class="feedback" style="background-image: url(./img/feedback-bg.jpg)">
+    <section class="feedback-container" style="background-image: url(./img/feedback-bg.jpg)">
         <div class="feed-title">ОТЗЫВЫ ПОКУПАТЕЛЕЙ</div>
         <div class="feed-item"><div style="background-image: url(./img/customer-1.jpg)" class="feed-img"></div>
             <div class="feed-content">
@@ -92,10 +93,36 @@
         </div>
     </section>
 
+
+    <section class="main-container" style="background-image: url(./img/top-background.jpg)">
+        <section class="goods-text">
+            <div class="goods-title"><h1>Н1 - Название ТОВАРА</h1></div>
+            <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
+            <div class="price">PRICE</div>
+            <div class="countdown">04:18:24</div>
+            <div id="purchase-btn-f" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
+                <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
+            </div>
+        </section>
+        <section class="main-photo">
+            <img src="./img/main-photo.png" alt="goods">
+        </section>
+    </section>
+
+    <footer class="footer-section">
+        <p>&copy; 2018<p>
+    </footer>
+
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <p>Купи слона!</p>
+            <form action="#">
+                <label>Введите Ваш номер телефона: <input type="text" placeholder="Номер телефона"></label>
+                <label>Введите ФИО:<input type="text" placeholder="Фамилия Имя Отчество"></label>
+                <label>Город и отделение "Новой Почты"<input type="text" placeholder="Город, № отделения"></label>
+                <input type="submit">
+            </form>
         </div>
     </div>
     <script src="js/script.js"></script>

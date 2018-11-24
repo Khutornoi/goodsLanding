@@ -4,13 +4,72 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 @import url('https://fonts.googleapis.com/css?family=Russo+One&subset=cyrillic');
 
+html {
+  font-size: 16px;
+  min-width: 360px;
+}
 
 body {
   background-color: #333333;
   color: white;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
 }
+//body>a {
+//  color: inherit;
+//    text-decoration: none;
+//  :hover, :active, :visited{
+//    color: inherit;
+//    text-decoration: none;
+//  }
+//
+//}
+
+%section-title {
+  border: aqua solid;
+  //display
+  display: flex;
+  padding: 0.5rem 2.5rem;
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  //Font
+  font-family: 'Russo One', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media only screen  and (max-width : 600px) {
+    padding: 0.5rem 0.5rem;
+    font-size: 1.2rem;
+
+  }
+}
+%section-container {
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  padding: 2% 5% 2% 5%;
+
+  @media only screen  and (max-width : 600px) {
+    padding: 0.5rem 0.5rem;
+  }
+
+  @media only screen  and (min-width : 1200px) {
+    padding: 2% 5% 2% 5%;
+
+  }
+}
+
+%inner-container{
+  @media only screen  and (max-width : 600px) {
+    padding: 0.5rem 0.5rem;
+  }
+
+}
+
 
 /*.top-container {*/
 /*display: flex;*/
@@ -36,6 +95,7 @@ body {
   display: flex;
   border: aqua solid;
   padding: 5px;
+  font-size: 1rem;
 }
 @media only screen  and (max-width : 600px) {
   .navigation {
@@ -50,7 +110,7 @@ body {
 }
 
 .main-container {
-  display: flex;
+  @extend %section-container;
   flex-direction: row;
 }
 
@@ -66,11 +126,16 @@ body {
   .main-container {
     flex-direction: column-reverse;
   }
-  .goods-title {
+  .goods-text {
     margin-top: 0;
+
   }
 }
-.goods-title {
+.goods-title{
+  @extend %section-title;
+  background: none;
+}
+.goods-text {
   display: flex;
   flex-direction: column;
   //justify-content: center;
@@ -79,11 +144,11 @@ body {
 
 }
 /*This is for delete:*/
-.goods-title>*{
+.goods-text>*{
   border: aquamarine solid;
 }
 
-.goods-title>h1 {
+.goods-text>h1 {
   font-size: 2.4em;
   margin: 2em auto auto auto;
 }
@@ -162,14 +227,14 @@ body {
 }
 
 /* To delete:*/
-.feedback>* {
+.feedback-container>* {
   border: greenyellow solid;
 
 }
 .feed-item>*{
   border: aqua solid;
 }
-.feedback{
+.feedback-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -177,11 +242,12 @@ body {
   padding: 2% 10% 2% 10%;
 }
 .feed-title{
-  display: flex;
-  justify-content: center;
-  font-family: 'Russo One', sans-serif;
-  font-size: 28px;
-  font-weight: 500;
+  //display: flex;
+  //justify-content: center;
+  //font-family: 'Russo One', sans-serif;
+  //font-size: 28px;
+  //font-weight: 500;
+  @extend %section-title;
 }
 .feed-item{
   display: flex;
@@ -223,27 +289,29 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  //align-items: center;
   background-size: cover;
   padding: 2% 10% 2% 10%;
 
 }
 .delivery-title{
-  display: flex;
-  text-align: center;
-  //margin: auto;
-  max-width: 440px;
-  max-height: 2rem;
-  background-color: rgba(0, 0, 0, 0.39);
-  border-radius: 5px;
-  padding: 2% 10% 2% 10%;
-  //height: 54px;
-  //width: 440px;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Russo One', sans-serif;
-  font-size: 28px;
-  font-weight: 500;
+  @extend %section-title;
+
+  //display: flex;
+  //text-align: center;
+  ////margin: auto;
+  //max-width: 440px;
+  //max-height: 2rem;
+  //background-color: rgba(0, 0, 0, 0.39);
+  //border-radius: 5px;
+  //padding: 2% 10% 2% 10%;
+  ////height: 54px;
+  ////width: 440px;
+  //justify-content: center;
+  //align-items: center;
+  //font-family: 'Russo One', sans-serif;
+  //font-size: 28px;
+  //font-weight: 500;
 }
 .delivery-delivery{
   display: flex;
@@ -259,4 +327,10 @@ body {
   justify-content: center;
   align-items: start;
 
+}
+
+.footer-section{
+  display: flex;
+  justify-content: center;
+  color: #aaaaaa;
 }
