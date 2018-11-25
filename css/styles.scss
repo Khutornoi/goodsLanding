@@ -40,7 +40,7 @@ body {
   display: flex;
   justify-content: center;
   background-size: cover;
-  padding: 2% 5% 2% 5%;
+  padding: 1% 5% 1% 5%;
 
   @media only screen  and (max-width : 600px) {
     padding: 0.5rem 0.5rem;
@@ -141,7 +141,7 @@ a.menu-item:active {
 }
 
 .main-container>*{
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 /*This is for delete:*/
@@ -418,8 +418,34 @@ a.menu-item:active {
 
 }
 
+.at-btn-bg{
+  display: none;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 84px;   /* Высоту кнопки в неактивном состояние*/
+  width: 84px;    /* Ширина кнопки в неактивном состояние*/
+  position: fixed;
+  right: 2%;
+  bottom: 2%;       /* Расположение в браузере по y */
+  opacity: 0.9;
+  @media only screen  and (max-width : 600px) {
+    right: 4%;
+    bottom: 4%;       /* Расположение в браузере по y */
 
-
+  }
+}
+.at-btn-fg {
+  @extend .at-btn-bg;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.at-btn-fg:hover {
+  opacity: 1;
+}
 .footer-section{
   display: flex;
   justify-content: center;

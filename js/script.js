@@ -5,6 +5,8 @@ const modalBad = document.getElementById('modalBad');
 // Get the button that opens the modal
 var btnT = document.getElementById("purchase-btnT");
 var btnB = document.getElementById("purchase-btnB");
+var btnAt = document.getElementById("btnAt");
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close");
@@ -14,6 +16,9 @@ btnT.onclick = function() {
     modal.style.display = "block";
 };
 btnB.onclick = function() {
+    modal.style.display = "block";
+};
+btnAt.onclick = function() {
     modal.style.display = "block";
 };
 
@@ -53,6 +58,20 @@ const request = (dataString) => {
         });
 };
 
+
+const btnAtTrigger = () => {
+    //Btns
+    if ($(btnT).visible(true) || $(btnB).visible(true)) {
+        console.log('vis');
+        $('.at-btn-bg').css('display', 'none')
+    } else {
+        console.log('hid');
+        $('.at-btn-bg').css('display', 'block')
+
+    }
+
+};
+
 $( "#formPurchase" ).on( "submit", function( event ) {
     event.preventDefault();
     modal.style.display = "none";
@@ -66,8 +85,29 @@ $("#btnMenu").on("click", function (e) {
 });
 $(window).on('resize', () => {
     if ($(window).width() > 600) {
+        console.log('>600');
         $('.menu-item').css('display', 'flex')
     } else {
+        console.log('<600');
         $('.menu-item').css('display', 'none');
     }
+    
+    //Btns
+    if ($(btnT).visible(true) || $(btnB).visible(true)) {
+        console.log('vis');
+        $('.at-btn-bg').css('display', 'none')
+    } else {
+        console.log('hid');
+        $('.at-btn-bg').css('display', 'block')
+
+    }
+});
+
+$(window).on('scroll', () => {
+    console.log('scroll');
+    btnAtTrigger();
+});
+$(window).on('load', () => {
+    console.log('load');
+    btnAtTrigger();
 });
