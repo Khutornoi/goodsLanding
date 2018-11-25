@@ -8,7 +8,6 @@ var btnB = document.getElementById("purchase-btnB");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close");
-console.log(span);
 
 // When the user clicks on the button, open the modal
 btnT.onclick = function() {
@@ -44,10 +43,7 @@ const request = (dataString) => {
     $.post("mock.json",
         dataString,
         function(data, status){
-            console.log(data);
-            console.log(status);
             if (status === 'success' & data === "accepted") {
-                console.log('mOk');
                 modalOk.style.display = "block";
 
             } else {
@@ -61,7 +57,6 @@ $( "#formPurchase" ).on( "submit", function( event ) {
     event.preventDefault();
     modal.style.display = "none";
     let formDataString = $(this).serialize();
-    console.log('formData', formDataString );
     request(formDataString);
 });
 

@@ -12,7 +12,7 @@
     <script src="./js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <header class="top-container" style="background-image: url(./img/top-background.jpg); background-size: cover; background-repeat: no-repeat">
+    <header class="top-container" style="background-image: url(./img/top-background.jpg)">
         <nav class="navigation" style="  color: rgb(14, 126, 227); background-color: rgba(24, 24, 24, 0.69)">
             <div id="btnMenu" class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -58,7 +58,7 @@
                 </div>
             </section>
             <section class="main-photo">
-                <img src="./img/main-photo.png" alt="goods">
+                <div><img src="./img/main-photo.png" alt="goods"></div>
             </section>
         </main>
     </header>
@@ -126,7 +126,7 @@
     </section>
 
 
-    <section class="main-container" style="background-image: url(./img/top-background.jpg)">
+<div class="top-container" style="background-image: url(./img/top-background.jpg)" >    <section class="main-container">
         <section class="goods-text">
             <div class="goods-title"><h1>Н1 - Название ТОВАРА</h1></div>
             <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
@@ -164,9 +164,9 @@
             </div>
         </section>
         <section class="main-photo">
-            <img src="./img/main-photo.png" alt="goods">
+            <div><img src="./img/main-photo.png" alt="goods"></div>
         </section>
-    </section>
+    </section></div>
 
     <footer class="footer-section">
         <p>&copy; 2018<p>
@@ -175,12 +175,20 @@
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Купи слона!</p>
+            <div class="modal-title" style="color: rgb(14, 126, 227);">НАЗВАНИЕ ТОВАРА</div>
+            <div class="separator"></div>
+            <div class="modal-photo">
+                <img src="./img/main-photo.png" alt="goods">
+            </div>
             <form id="formPurchase" action="#">
-                <label>Введите Ваш номер телефона: <input type="text" name="phone" placeholder="Номер телефона" value="+380112223344"></label>
-                <label>Введите ФИО:<input type="text" name="customerName" placeholder="Фамилия Имя Отчество" value="Самусенко Геннадий Валентинович"></label>
-                <label>Город и отделение "Новой Почты"<input type="text" name="address" placeholder="Город, № отделения" value="Киев 1"></label>
-                <input id="btnSend" type="submit">
+                <label class="modal-form-item">Введите Ваш номер телефона: <input type="text" name="phone" placeholder="Номер телефона" value="+380112223344"></label>
+                <label class="modal-form-item">Введите ФИО:<input type="text" name="customerName" placeholder="Фамилия Имя Отчество" value="Самусенко Геннадий Валентинович"></label>
+                <label class="modal-form-item">Город и отделение "Новой Почты": <br/><input type="text" name="address" placeholder="Город, № отделения" value="Киев 1"></label>
+                <div class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
+                    <input id="btnSend" type="submit" class="fg purchase-btn mod-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0" >
+                </div>
+
+                <!--<input id="btnSend" type="submit">-->
             </form>
         </div>
     </div>

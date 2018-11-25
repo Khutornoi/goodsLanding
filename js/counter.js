@@ -47,5 +47,4 @@ function initializeClock(id, endtime) {
 }
 
 var deadline = new Date(Date.parse(new Date()) + 15 * 14 * 28 * 33 * 1000); // for endless timer
-console.log(deadline);
 initializeClock('clockdiv', deadline);

@@ -15,26 +15,15 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 1rem;
 }
-//body>a {
-//  color: inherit;
-//    text-decoration: none;
-//  :hover, :active, :visited{
-//    color: inherit;
-//    text-decoration: none;
-//  }
-//
-//}
 
 %section-title {
-  border: aqua solid;
-  //display
+  //border: aqua solid;
   display: flex;
   padding: 0.5rem 2.5rem;
   background-color: rgba(0, 0, 0, 0.39);
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-  //Font
   font-family: 'Russo One', sans-serif;
   font-size: 2rem;
   font-weight: 500;
@@ -71,33 +60,26 @@ body {
 }
 
 
-/*.top-container {*/
-/*display: flex;*/
-/*}*/
+.top-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
 .navigation{
   @extend %section-container;
-  //padding-top: 1.5rem;
-  //padding-bottom: 1.5rem;
-  //display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
-//.navigation>*{
-//  justify-content: center;
-//  align-items: center;
-//}
-
 %menu-i{
   display: flex;
-  border: aqua solid;
+  //border: aqua solid;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   justify-content: center;
   align-items: center;
-
   @media only screen  and (max-width : 600px) {
     width: 100%;
     padding: 0.5rem;
@@ -163,9 +145,9 @@ a.menu-item:active {
 }
 
 /*This is for delete:*/
-.main-container>*{
-  border: aquamarine solid;
-}
+//.main-container>*{
+//  border: aquamarine solid;
+//}
 @media only screen  and (max-width : 900px) {
   .main-container {
     flex-direction: column-reverse;
@@ -173,7 +155,6 @@ a.menu-item:active {
   }
   .goods-text {
     margin-top: 0;
-
   }
 }
 .goods-title{
@@ -183,15 +164,13 @@ a.menu-item:active {
 .goods-text {
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   flex-basis: 55%;
   padding-bottom: 20px;
-
 }
 /*This is for delete:*/
-.goods-text>*{
-  border: aquamarine solid;
-}
+//.goods-text>*{
+//  border: aquamarine solid;
+//}
 
 .goods-text>h1 {
   font-size: 2.4em;
@@ -199,8 +178,7 @@ a.menu-item:active {
 }
 .discount{
   font-size: 2.4em;
-  margin: 1em auto auto auto;
-
+  margin: 0 auto 0 auto;
 }
 
 /* Price section */
@@ -216,10 +194,9 @@ a.menu-item:active {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  //padding: 0.5rem;
   margin: 0;
   span{
-    border: aquamarine solid;
+    //border: aquamarine solid;
     display: inline-flex;
     width: 50%;
     justify-content: center;
@@ -242,24 +219,41 @@ a.menu-item:active {
     @media only screen  and (max-width : 600px) {
       font-size: 1.5rem;
     }
-
-
   }
 }
 .countdown {
   margin: 2em auto auto auto;
-
 }
 .main-photo {
   display: flex;
   flex-shrink: 0;
   justify-content: left;
   flex-basis: 45%;
+  >div{
+    //border: deeppink solid;
+    max-width: 80%;
+    text-align: left;
+    margin: auto auto auto 0;
+    //position: relative;
+    //top: 0; left: 0; bottom: 0; right: 0;
+    >img {
+      display: block;
+      margin: auto;
+      overflow-style: marquee-block;
+    }
+  }
   @media only screen  and (max-width : 900px) {
     justify-content: center;
-  }
-}
+    >div{
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      margin: auto !important;
 
+    }
+  }
+
+}
 .purchase-btn{
   display: flex;
   width: 280px;
@@ -277,25 +271,22 @@ a.menu-item:active {
    transition-duration: 0.3s;
    -webkit-transition-timing-function: ease-out;
    transition-timing-function: ease-out;
-
  }
  .fg:hover, .fg:focus, .fg:active{
    opacity: 1;
  }
 
  /* Description block */
-.description-section * {
-  //display: flex;
-  border: aqua solid;
-}
+//.description-section * {
+  //border: aqua solid;
+//}
 .description-section {
-  border: aqua solid;
+  //border: aqua solid;
 
   display: flex;
   background-size: cover;
   flex-wrap: wrap;
   justify-content: center;
-
   .descr {
     display: inline-flex;
     margin: 2rem;
@@ -306,7 +297,6 @@ a.menu-item:active {
       margin: 0.8rem;
       width: 100%;
     }
-
   }
 }
 .img-descr{
@@ -314,7 +304,6 @@ a.menu-item:active {
   flex-shrink: 0;
   width: 62px;
   height: 62px;
-
 }
 .text-descr {
   text-transform: uppercase;
@@ -323,13 +312,13 @@ a.menu-item:active {
 }
 
 /* To delete:*/
-.feedback-container>* {
-  border: greenyellow solid;
-
-}
-.feed-item>*{
-  border: aqua solid;
-}
+//.feedback-container>* {
+//  border: greenyellow solid;
+//
+//}
+//.feed-item>*{
+//  border: aqua solid;
+//}
 .feedback-container{
   display: flex;
   flex-direction: column;
@@ -339,6 +328,12 @@ a.menu-item:active {
 }
 .feed-title{
   @extend %section-title;
+  margin-bottom: 2rem;
+  @media only screen  and (max-width : 600px){
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
 }
 .feed-item{
   display: flex;
@@ -346,12 +341,15 @@ a.menu-item:active {
   align-items: center;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   .feed-name {
     font-weight: 700;
     text-transform: uppercase;
   }
   @media only screen  and (max-width : 600px){
     flex-direction: column;
+    margin-top: 0.8rem;
     margin-bottom: 0.8rem;
   }
 }
@@ -373,14 +371,14 @@ a.menu-item:active {
   padding: 3%;
 }
 
-/*to delete:*/
-.delivery{
-  border: greenyellow solid;
-  >*{
-  border: greenyellow solid;
-
-}
-}
+///*to delete:*/
+//.delivery{
+//  border: greenyellow solid;
+//  >*{
+//  border: greenyellow solid;
+//
+//}
+//}
 
 .delivery {
   display: flex;
@@ -393,38 +391,34 @@ a.menu-item:active {
 }
 .delivery-title{
   @extend %section-title;
-
-  //display: flex;
-  //text-align: center;
-  ////margin: auto;
-  //max-width: 440px;
-  //max-height: 2rem;
-  //background-color: rgba(0, 0, 0, 0.39);
-  //border-radius: 5px;
-  //padding: 2% 10% 2% 10%;
-  ////height: 54px;
-  ////width: 440px;
-  //justify-content: center;
-  //align-items: center;
-  //font-family: 'Russo One', sans-serif;
-  //font-size: 28px;
-  //font-weight: 500;
 }
-.delivery-delivery{
+%delivery-common{
   display: flex;
-  align-self: flex-end;
-  justify-self: flex-end;
   padding: 2%;
-  max-width: 440px;
-  //width: 30%;
+  max-width: 400px;
   flex-direction: column;
-  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   justify-content: center;
-  align-items: start;
 
 }
+
+.delivery-delivery{
+  @extend %delivery-common;
+  align-self: flex-end;
+  justify-self: flex-end;
+
+}
+.delivery-payment{
+  @extend %delivery-common;
+  align-self: flex-start;
+  justify-self: start;
+
+}
+
+
 
 .footer-section{
   display: flex;
