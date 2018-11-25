@@ -161,6 +161,13 @@ a.menu-item:active {
   @extend %section-title;
   background: none;
 }
+.go-ti{
+  @extend  .goods-title;
+  display: none;
+  @media only screen  and (max-width : 900px) {
+    display: flex;
+  }
+}
 .goods-text {
   display: flex;
   flex-direction: column;
@@ -443,9 +450,9 @@ a.menu-item:active {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
-.at-btn-fg:hover {
-  opacity: 1;
-}
+//.at-btn-fg:hover {
+//  opacity: 1;
+//}
 .footer-section{
   display: flex;
   justify-content: center;

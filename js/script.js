@@ -45,6 +45,7 @@ window.onclick = function(event) {
 
 //Part 2
 const request = (dataString) => {
+    console.log(dataString);
     $.post("mock.json",
         dataString,
         function(data, status){
@@ -64,50 +65,56 @@ const btnAtTrigger = () => {
     if ($(btnT).visible(true) || $(btnB).visible(true)) {
         console.log('vis');
         $('.at-btn-bg').css('display', 'none')
+        $('.at-btn-fg').css('display', 'none')
     } else {
         console.log('hid');
         $('.at-btn-bg').css('display', 'block')
+        $('.at-btn-fg').css('display', 'block')
 
     }
 
 };
 
+const dataFormer = (arr) => {
+    let result = {};
+    arr.forEach((item) => {
+        // console.log(item);
+        result[item.name] = item.value;
+    });
+    return JSON.stringify(result);
+    // console.log('result: ');
+    // console.log(JSON.stringify(result));
+}
+
 $( "#formPurchase" ).on( "submit", function( event ) {
     event.preventDefault();
     modal.style.display = "none";
-    let formDataString = $(this).serialize();
-    request(formDataString);
+    let formDataString = $(this).serializeArray();
+    // console.log(formDataString);
+
+    request(dataFormer(formDataString));
 });
 
 // Menu
 $("#btnMenu").on("click", function (e) {
-    $('.menu-item').css('display') === 'none' ? $('.menu-item').css('display', 'flex') : $('.menu-item').css('display', 'none');
+    const menuItemClass = $('.menu-item');
+    $(menuItemClass).css('display') === 'none' ? $(menuItemClass).css('display', 'flex') : $(menuItemClass).css('display', 'none');
 });
 $(window).on('resize', () => {
     if ($(window).width() > 600) {
-        console.log('>600');
         $('.menu-item').css('display', 'flex')
     } else {
-        console.log('<600');
         $('.menu-item').css('display', 'none');
     }
     
     //Btns
-    if ($(btnT).visible(true) || $(btnB).visible(true)) {
-        console.log('vis');
-        $('.at-btn-bg').css('display', 'none')
-    } else {
-        console.log('hid');
-        $('.at-btn-bg').css('display', 'block')
+    btnAtTrigger();
 
-    }
 });
 
 $(window).on('scroll', () => {
-    console.log('scroll');
     btnAtTrigger();
 });
 $(window).on('load', () => {
-    console.log('load');
     btnAtTrigger();
 });
