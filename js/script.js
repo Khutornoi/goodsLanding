@@ -65,3 +65,13 @@ $( "#formPurchase" ).on( "submit", function( event ) {
     request(formDataString);
 });
 
+// Menu
+$("#btnMenu").on("click", function (e) {
+    $('.menu-item').css('display') === 'none' ? $('.menu-item').css('display', 'flex') : $('.menu-item').css('display', 'none');
+});
+$(window).on('resize', () => {
+    if ($(window).width() > 600) {
+    } else {
+        $('.menu-item').css('display', 'none');
+    }
+});

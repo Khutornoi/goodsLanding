@@ -14,19 +14,36 @@
 <body>
     <header class="top-container" style="background-image: url(./img/top-background.jpg); background-size: cover; background-repeat: no-repeat">
         <nav class="navigation" style="  color: rgb(14, 126, 227); background-color: rgba(24, 24, 24, 0.69)">
-            <div class="menu-btn">
+            <div id="btnMenu" class="menu-btn">
                 <i class="fas fa-bars"></i>
             </div>
-            <div class="menu-item">ОПИСАНИЕ</div>
-            <div class="menu-item">ДОСТАВКА</div>
-            <div class="menu-item">ОТЗЫВЫ</div>
+            <a href="#description" class="menu-item">ОПИСАНИЕ</a>
+            <a href="#feedback" class="menu-item">ОТЗЫВЫ</a>
+            <a href="#delivery" class="menu-item">ДОСТАВКА</a>
         </nav>
         <main class="main-container">
             <section class="goods-text">
                 <div class="goods-title"><h1>Н1 - Название ТОВАРА</h1></div>
                 <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
                 <div class="price">PRICE</div>
-                <div class="countdown">04:18:24</div>
+                <div id="clockdiv">
+                    <div id="clockdivH">
+                        <span class="days"></span>
+                        <div class="smalltext">Days</div>
+                    </div>
+                    <div class="clock-div">
+                        <span class="hours" ></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div class="clock-div">
+                        <span class="minutes"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div class="clock-div">
+                        <span class="seconds"></span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
+                </div>
                 <div id="purchase-btnT" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
                     <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
                 </div>
@@ -37,6 +54,7 @@
         </main>
     </header>
     <section class="description-section" style="background-image: url(./img/description-bacground.jpg)">
+        <a name="description"></a>
         <div class="descr"><img src="./img/descr-img-1.png" alt="" class="img-descr">
             <div class="text-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi enim eum excepturi illum libero molestias sit velit veritatis?
             </div>
@@ -58,6 +76,8 @@
         </div>
     </section>
     <section class="feedback-container" style="background-image: url(./img/feedback-bg.jpg)">
+        <a name="feedback"></a>
+
         <div class="feed-title">ОТЗЫВЫ ПОКУПАТЕЛЕЙ</div>
         <div class="feed-item"><div style="background-image: url(./img/customer-1.jpg)" class="feed-img"></div>
             <div class="feed-content">
@@ -81,6 +101,8 @@
     </section>
 
     <section class="delivery" style="background-image: url(./img/delivery_bg.jpg)">
+        <a name="delivery"></a>
+
         <div class="delivery-title">Доставка и оплата:</div>
         <div class="delivery-delivery">
             <strong>Доставка по Украине 1-2 дня!!! </strong>
@@ -100,7 +122,25 @@
             <div class="goods-title"><h1>Н1 - Название ТОВАРА</h1></div>
             <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
             <div class="price">PRICE</div>
-            <div class="countdown">04:18:24</div>
+            <div id="clockdivB">
+                <div id="clockdivHB">
+                    <span class="days"></span>
+                    <div class="smalltext">Days</div>
+                </div>
+                <div class="clock-div">
+                    <span class="hours" ></span>
+                    <div class="smalltext">Hours</div>
+                </div>
+                <div class="clock-div">
+                    <span class="minutes"></span>
+                    <div class="smalltext">Minutes</div>
+                </div>
+                <div class="clock-div">
+                    <span class="seconds"></span>
+                    <div class="smalltext">Seconds</div>
+                </div>
+            </div>
+
             <div id="purchase-btnB" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
                 <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
             </div>
@@ -148,6 +188,7 @@
 
         </div>
     </div>
+    <script src="./js/counter.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
