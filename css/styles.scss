@@ -169,6 +169,7 @@ a.menu-item:active {
 @media only screen  and (max-width : 900px) {
   .main-container {
     flex-direction: column-reverse;
+    margin-top: 0;
   }
   .goods-text {
     margin-top: 0;
@@ -201,8 +202,49 @@ a.menu-item:active {
   margin: 1em auto auto auto;
 
 }
+
+/* Price section */
 .price {
   margin: 2em auto auto auto;
+  width: 380px;
+  @media only screen  and (max-width : 600px) {
+    width: 280px;
+    margin: 1em auto auto auto;
+  }
+}
+.price-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  //padding: 0.5rem;
+  margin: 0;
+  span{
+    border: aquamarine solid;
+    display: inline-flex;
+    width: 50%;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+}
+.price-value {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border-radius: 6px;
+  overflow: hidden;
+  div {
+    display: inline-flex;
+    padding: 1rem;
+    width: 50%;
+    justify-content: center;
+    font-family: 'Russo One', sans-serif;
+    font-size: 2rem;
+    @media only screen  and (max-width : 600px) {
+      font-size: 1.5rem;
+    }
+
+
+  }
 }
 .countdown {
   margin: 2em auto auto auto;
@@ -210,9 +252,12 @@ a.menu-item:active {
 }
 .main-photo {
   display: flex;
+  flex-shrink: 0;
   justify-content: left;
-
   flex-basis: 45%;
+  @media only screen  and (max-width : 900px) {
+    justify-content: center;
+  }
 }
 
 .purchase-btn{
@@ -256,6 +301,12 @@ a.menu-item:active {
     margin: 2rem;
     width: 40%;
     align-items: center;
+    @media only screen  and (max-width : 600px){
+      flex-direction: column;
+      margin: 0.8rem;
+      width: 100%;
+    }
+
   }
 }
 .img-descr{
@@ -267,6 +318,7 @@ a.menu-item:active {
 }
 .text-descr {
   text-transform: uppercase;
+  text-align: justify;
   padding: 2%;
 }
 
@@ -286,24 +338,25 @@ a.menu-item:active {
   padding: 2% 10% 2% 10%;
 }
 .feed-title{
-  //display: flex;
-  //justify-content: center;
-  //font-family: 'Russo One', sans-serif;
-  //font-size: 28px;
-  //font-weight: 500;
   @extend %section-title;
 }
 .feed-item{
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   .feed-name {
     font-weight: 700;
     text-transform: uppercase;
   }
+  @media only screen  and (max-width : 600px){
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+  }
 }
 .feed-img{
-  display: block;
+  display: flex;
   flex-shrink: 0;
   width: 200px;
   height: 200px;

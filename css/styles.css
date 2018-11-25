@@ -67,7 +67,7 @@ a.menu-item:active { color: inherit; text-decoration: none; }
 /*This is for delete:*/
 .main-container > * { border: aquamarine solid; }
 
-@media only screen and (max-width: 900px) { .main-container { flex-direction: column-reverse; }
+@media only screen and (max-width: 900px) { .main-container { flex-direction: column-reverse; margin-top: 0; }
   .goods-text { margin-top: 0; } }
 .goods-title { background: none; }
 
@@ -80,11 +80,21 @@ a.menu-item:active { color: inherit; text-decoration: none; }
 
 .discount { font-size: 2.4em; margin: 1em auto auto auto; }
 
-.price { margin: 2em auto auto auto; }
+/* Price section */
+.price { margin: 2em auto auto auto; width: 380px; }
+@media only screen and (max-width: 600px) { .price { width: 280px; margin: 1em auto auto auto; } }
+
+.price-title { display: flex; width: 100%; justify-content: space-around; margin: 0; }
+.price-title span { border: aquamarine solid; display: inline-flex; width: 50%; justify-content: center; padding: 0.5rem; }
+
+.price-value { display: flex; width: 100%; justify-content: space-around; border-radius: 6px; overflow: hidden; }
+.price-value div { display: inline-flex; padding: 1rem; width: 50%; justify-content: center; font-family: 'Russo One', sans-serif; font-size: 2rem; }
+@media only screen and (max-width: 600px) { .price-value div { font-size: 1.5rem; } }
 
 .countdown { margin: 2em auto auto auto; }
 
-.main-photo { display: flex; justify-content: left; flex-basis: 45%; }
+.main-photo { display: flex; flex-shrink: 0; justify-content: left; flex-basis: 45%; }
+@media only screen and (max-width: 900px) { .main-photo { justify-content: center; } }
 
 .purchase-btn { display: flex; width: 280px; height: 62px; margin: auto auto 2rem auto; }
 
@@ -99,10 +109,11 @@ a.menu-item:active { color: inherit; text-decoration: none; }
 
 .description-section { border: aqua solid; display: flex; background-size: cover; flex-wrap: wrap; justify-content: center; }
 .description-section .descr { display: inline-flex; margin: 2rem; width: 40%; align-items: center; }
+@media only screen and (max-width: 600px) { .description-section .descr { flex-direction: column; margin: 0.8rem; width: 100%; } }
 
 .img-descr { display: flex; flex-shrink: 0; width: 62px; height: 62px; }
 
-.text-descr { text-transform: uppercase; padding: 2%; }
+.text-descr { text-transform: uppercase; text-align: justify; padding: 2%; }
 
 /* To delete:*/
 .feedback-container > * { border: greenyellow solid; }
@@ -111,10 +122,11 @@ a.menu-item:active { color: inherit; text-decoration: none; }
 
 .feedback-container { display: flex; flex-direction: column; justify-content: center; background-size: cover; padding: 2% 10% 2% 10%; }
 
-.feed-item { display: flex; font-family: 'Roboto', sans-serif; font-size: 16px; }
+.feed-item { display: flex; justify-content: center; align-items: center; font-family: 'Roboto', sans-serif; font-size: 16px; }
 .feed-item .feed-name { font-weight: 700; text-transform: uppercase; }
+@media only screen and (max-width: 600px) { .feed-item { flex-direction: column; margin-bottom: 0.8rem; } }
 
-.feed-img { display: block; flex-shrink: 0; width: 200px; height: 200px; border-radius: 6%; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; }
+.feed-img { display: flex; flex-shrink: 0; width: 200px; height: 200px; border-radius: 6%; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; }
 
 .feed-content { display: flex; flex-direction: column; justify-content: center; padding: 3%; }
 

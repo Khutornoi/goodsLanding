@@ -71,6 +71,7 @@ $("#btnMenu").on("click", function (e) {
 });
 $(window).on('resize', () => {
     if ($(window).width() > 600) {
+        $('.menu-item').css('display', 'flex')
     } else {
         $('.menu-item').css('display', 'none');
     }
