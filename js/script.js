@@ -1,7 +1,7 @@
 // Get the modal
 var modal = document.getElementById('modal');
 const modalOk = document.getElementById('modalOk');
-const modalBad = document.getElementById('modalBad');
+var modalBad = document.getElementById('modalBad');
 // Get the button that opens the modal
 var btnT = document.getElementById("purchase-btnT");
 var btnB = document.getElementById("purchase-btnB");
@@ -40,12 +40,11 @@ window.onclick = function(event) {
         modalOk.style.display = "none";
         modalBad.style.display = "none";
     }
-}
-
+};
 
 //Part 2
 const request = (dataString) => {
-    console.log(dataString);
+    // console.log(dataString);
     $.post("create-order",
         dataString,
         function(data, status){
@@ -54,7 +53,6 @@ const request = (dataString) => {
 
             } else {
                 modalBad.style.display = "block";
-
             }
         }).fail(() => {
         modalBad.style.display = "block";
@@ -68,7 +66,7 @@ const btnAtTrigger = () => {
     const btnAtCF = $('.at-btn-fg');
     if ($(btnT).visible(true) || $(btnB).visible(true)) {
         if (btnAtCB.css('display') === 'block') {
-            console.log('BLOCK');
+            // console.log('BLOCK');
             // console.log('vis');
             btnAtCB.css('display', 'none');
             btnAtCF.css('display', 'none');
@@ -92,7 +90,7 @@ const btnAtTrigger = () => {
         }
     } else {
         if (btnAtCB.css('display') === 'none') {
-            console.log('NONE');
+            // console.log('NONE');
             // console.log('hid');
             btnAtCB.css('display', 'block').animate({
                 height: "+=10px",
@@ -167,3 +165,57 @@ $(window).on('scroll', () => {
 $(window).on('load', () => {
     btnAtTrigger();
 });
+
+
+// COUNTER start
+function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+        'total': t,
+        'days': days,
+        'hours': hours,
+        'minutes': minutes,
+        'seconds': seconds
+    };
+}
+
+function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var clockB = document.getElementById(id+'B');
+    var daysSpan = clock.querySelector('.days');
+    var daysSpanB = clockB.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var hoursSpanB = clockB.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var minutesSpanB = clockB.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+    var secondsSpanB = clockB.querySelector('.seconds');
+
+    function updateClock() {
+        var t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        daysSpanB.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        hoursSpanB.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        minutesSpanB.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+        secondsSpanB.innerHTML = ('0' + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+        }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+}
+
+var deadline = new Date(Date.parse(new Date()) + 15 * 14 * 28 * 33 * 1000); // for endless timer
+initializeClock('clockdiv', deadline);
+//COUNTER END

@@ -6,11 +6,11 @@
     <title>Title</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <!--<link rel="stylesheet" href="./css/hover.css">-->
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
-    <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./js/jquery.visible.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="./js/jquery-3.3.1.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js"></script>
 </head>
 <body>
     <header class="top-container" style="background-image: url(./img/top-background.jpg)">
@@ -86,8 +86,8 @@
 <!-- Description section end -->
 
 <!-- Feedback section end -->
-    <section class="feedback-container" style="background-image: url(./img/feedback-bg.jpg)">
         <a name="feedback"></a>
+    <section class="feedback-container" style="background-image: url(./img/feedback-bg.jpg)">
 
         <div class="feed-title">ОТЗЫВЫ ПОКУПАТЕЛЕЙ</div>
         <div class="feed-item"><div style="background-image: url(./img/customer-1.jpg)" class="feed-img"></div>
@@ -183,9 +183,9 @@
                 <img src="./img/main-photo.png" alt="goods">
             </div>
             <form id="formPurchase" action="#">
-                <label class="modal-form-item">Введите Ваш номер телефона: <input type="text" name="phone" placeholder="Номер телефона" value="+380112223344"></label>
-                <label class="modal-form-item">Введите ФИО:<input type="text" name="customerName" placeholder="Фамилия Имя Отчество" value="Самусенко Геннадий Валентинович"></label>
-                <label class="modal-form-item">Город и отделение "Новой Почты": <br/><input type="text" name="address" placeholder="Город, № отделения" value="Киев 1"></label>
+                <label class="modal-form-item">Введите Ваш номер телефона: <input type="text" name="phone" placeholder="Номер телефона"></label>
+                <label class="modal-form-item">Введите ФИО:<input type="text" name="customerName" placeholder="Фамилия Имя Отчество"></label>
+                <label class="modal-form-item">Город и отделение "Новой Почты": <br/><input type="text" name="address" placeholder="Город, № отделения"></label>
                 <div class="bg purchase-btn mod-btn" style="background-image: url(./img/purchase-bg.png)">
                     <input id="btnSend" type="submit" class="fg purchase-btn mod-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0" >
                 </div>
@@ -227,7 +227,6 @@
     </div>
 <!-- Attached button end -->
 
-    <script src="./js/counter.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
 </body>
 </html>
