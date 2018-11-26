@@ -18,18 +18,19 @@ body {
 
 %section-title {
   //border: aqua solid;
-  display: flex;
+  //display: flex;
+  //margin-bottom: auto;
   padding: 0.5rem 2.5rem;
   background-color: rgba(0, 0, 0, 0.39);
   border-radius: 5px;
   justify-content: center;
-  align-items: center;
+  //align-items: center;
   font-family: 'Russo One', sans-serif;
   font-size: 2rem;
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
-
+  justify-self: flex-start;
   @media only screen  and (max-width : 600px) {
     padding: 0.5rem 0.5rem;
     font-size: 1.2rem;
@@ -58,6 +59,20 @@ body {
   }
 
 }
+
+%content-item {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  margin: 2rem auto 2rem auto;
+  padding: 2rem;
+  text-align: justify;
+  @media only screen  and (max-width : 600px){
+    margin: 0.8rem auto 0.8rem auto;
+    padding: 0.8rem;
+  }
+}
+
 
 
 .top-container {
@@ -291,17 +306,21 @@ a.menu-item:active {
   //border: aqua solid;
 
   display: flex;
+  flex-direction: column;
   background-size: cover;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 2% 10% 2% 10%;
+
   .descr {
-    display: inline-flex;
-    margin: 2rem;
-    width: 40%;
+    display: flex;
+    margin: 0 auto 2rem auto;
+    //width: 40%;
     align-items: center;
+    text-align: justify;
     @media only screen  and (max-width : 600px){
       flex-direction: column;
-      margin: 0.8rem;
+      margin: 0 auto 0.8rem auto;
       width: 100%;
     }
   }
@@ -390,40 +409,31 @@ a.menu-item:active {
 .delivery {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   //align-items: center;
   background-size: cover;
+  background-position: center;
+
   padding: 2% 10% 2% 10%;
+  //min-height: 350px;
 
 }
 .delivery-title{
   @extend %section-title;
 }
-%delivery-common{
-  display: flex;
-  padding: 2%;
-  max-width: 400px;
-  flex-direction: column;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
-  justify-content: center;
-
+.delivery-content{
+  @extend %content-item;
+  //display: flex;
+  ////padding: 2%;
+  ////flex-direction: column;
+  //margin-top: 1rem;
+  //margin-bottom: 1rem;
+  //background-color: rgba(0, 0, 0, 0.7);
+  //border-radius: 5px;
+  //justify-content: center;
+  //
 }
 
-.delivery-delivery{
-  @extend %delivery-common;
-  align-self: flex-end;
-  justify-self: flex-end;
-
-}
-.delivery-payment{
-  @extend %delivery-common;
-  align-self: flex-start;
-  justify-self: start;
-
-}
 
 .at-btn-bg{
   display: none;

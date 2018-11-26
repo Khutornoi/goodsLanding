@@ -63,12 +63,12 @@ const request = (dataString) => {
 const btnAtTrigger = () => {
     //Btns
     if ($(btnT).visible(true) || $(btnB).visible(true)) {
-        console.log('vis');
-        $('.at-btn-bg').css('display', 'none')
+        // console.log('vis');
+        $('.at-btn-bg').css('display', 'none');
         $('.at-btn-fg').css('display', 'none')
     } else {
-        console.log('hid');
-        $('.at-btn-bg').css('display', 'block')
+        // console.log('hid');
+        $('.at-btn-bg').css('display', 'block');
         $('.at-btn-fg').css('display', 'block')
 
     }
