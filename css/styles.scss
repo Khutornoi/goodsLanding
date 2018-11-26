@@ -1,42 +1,135 @@
 @import "./modal";
-
+@import "./counter";
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=cyrillic-ext');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 @import url('https://fonts.googleapis.com/css?family=Russo+One&subset=cyrillic');
 
+html {
+  font-size: 16px;
+  min-width: 360px;
+}
 
 body {
   background-color: #333333;
   color: white;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
-/*.top-container {*/
-/*display: flex;*/
-/*}*/
-.navigation{
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+%section-title {
+  //border: aqua solid;
+  //display: flex;
+  //margin-bottom: auto;
+  padding: 0.5rem 2.5rem;
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 5px;
+  justify-content: center;
+  //align-items: center;
+  font-family: 'Russo One', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  justify-self: flex-start;
+  @media only screen  and (max-width : 600px) {
+    padding: 0.5rem 0.5rem;
+    font-size: 1.2rem;
+
+  }
+}
+%section-container {
   display: flex;
+  justify-content: center;
+  background-size: cover;
+  padding: 1% 5% 1% 5%;
+
+  @media only screen  and (max-width : 600px) {
+    padding: 0.5rem 0.5rem;
+  }
+
+  @media only screen  and (min-width : 1200px) {
+    padding: 2% 5% 2% 5%;
+
+  }
+}
+
+%inner-container{
+  @media only screen  and (max-width : 600px) {
+    padding: 0.5rem 0.5rem;
+  }
+
+}
+
+%content-item {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  margin: 2rem auto 2rem auto;
+  padding: 2rem;
+  text-align: justify;
+  @media only screen  and (max-width : 600px){
+    margin: 0.8rem auto 0.8rem auto;
+    padding: 0.8rem;
+  }
+}
+
+
+
+.top-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+.navigation{
+  @extend %section-container;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
-.navigation>*{
+%menu-i{
+  display: flex;
+  //border: aqua solid;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   justify-content: center;
   align-items: center;
+  @media only screen  and (max-width : 600px) {
+    width: 100%;
+    padding: 0.5rem;
+  }
 }
-.menu-btn{
-  display: none;
-  border: aqua solid;
-  height: 2rem;
-}
+
 .menu-item {
-  display: flex;
-  border: aqua solid;
-  padding: 5px;
+  @extend %menu-i;
+   padding: 0.8rem 1.5rem;
+   font-size: 1rem;
+ }
+.menu-btn{
+  @extend %menu-i;
+  display: none;
+  padding: 0.5rem;
+  font-size: 2rem;
 }
+
+a.menu-item:link {
+  color: inherit;
+  text-decoration: none;
+}
+a.menu-item:visited {
+  color: inherit;
+  text-decoration: none;
+}
+a.menu-item:hover {
+  color: inherit;
+  text-decoration: none;
+}
+a.menu-item:active {
+  color: inherit;
+  text-decoration: none;
+}
+
 @media only screen  and (max-width : 600px) {
   .navigation {
     flex-direction: column;
@@ -48,69 +141,153 @@ body {
     display: none;
   }
 }
+@media only screen  and (min-width : 601px) {
+  .menu-btn{
+    display: none;
+  }
+  .menu-item{
+    display: flex;
+  }
+}
 
 .main-container {
-  display: flex;
+  @extend %section-container;
   flex-direction: row;
 }
 
 .main-container>*{
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 /*This is for delete:*/
-.main-container>*{
-  border: aquamarine solid;
-}
+//.main-container>*{
+//  border: aquamarine solid;
+//}
 @media only screen  and (max-width : 900px) {
   .main-container {
     flex-direction: column-reverse;
+    margin-top: 0;
   }
-  .goods-title {
+  .goods-text {
     margin-top: 0;
   }
 }
-.goods-title {
+.goods-title{
+  @extend %section-title;
+  background: none;
+}
+.go-ti{
+  @extend  .goods-title;
+  display: none;
+  @media only screen  and (max-width : 900px) {
+    display: flex;
+  }
+}
+.goods-text {
   display: flex;
   flex-direction: column;
-  //justify-content: center;
   flex-basis: 55%;
   padding-bottom: 20px;
-
 }
 /*This is for delete:*/
-.goods-title>*{
-  border: aquamarine solid;
-}
+//.goods-text>*{
+//  border: aquamarine solid;
+//}
 
-.goods-title>h1 {
+.goods-text>h1 {
   font-size: 2.4em;
   margin: 2em auto auto auto;
 }
 .discount{
   font-size: 2.4em;
-  margin: 1em auto auto auto;
-
+  margin: 0 auto 0 auto;
 }
+
+/* Price section */
 .price {
   margin: 2em auto auto auto;
+  width: 380px;
+  @media only screen  and (max-width : 600px) {
+    width: 280px;
+    margin: 1em auto auto auto;
+  }
+}
+.price-title {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin: 0;
+  span{
+    //border: aquamarine solid;
+    display: inline-flex;
+    width: 50%;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+}
+.price-value {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border-radius: 6px;
+  overflow: hidden;
+  div {
+    display: inline-flex;
+    padding: 1rem;
+    width: 50%;
+    justify-content: center;
+    font-family: 'Russo One', sans-serif;
+    font-size: 2rem;
+    @media only screen  and (max-width : 600px) {
+      font-size: 1.5rem;
+    }
+  }
 }
 .countdown {
   margin: 2em auto auto auto;
-
 }
 .main-photo {
   display: flex;
+  flex-shrink: 0;
   justify-content: left;
-
   flex-basis: 45%;
+  >div{
+    //border: deeppink solid;
+    max-width: 80%;
+    text-align: left;
+    margin: auto auto auto 0;
+    //position: relative;
+    //top: 0; left: 0; bottom: 0; right: 0;
+    >img {
+      display: block;
+      margin: auto;
+      overflow-style: marquee-block;
+    }
+  }
+  @media only screen  and (max-width : 900px) {
+    justify-content: center;
+    >div{
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      margin: auto !important;
+
+    }
+  }
 }
 
+.btn-wrapper{
+  display: flex;
+  width: 300px;
+  height: 82px;
+  margin: auto auto 2rem auto;
+
+}
 .purchase-btn{
   display: flex;
   width: 280px;
   height: 62px;
-  margin: auto auto 2rem auto;
+  margin: auto;
 }
 .bg{
     background-size: cover;
@@ -123,30 +300,36 @@ body {
    transition-duration: 0.3s;
    -webkit-transition-timing-function: ease-out;
    transition-timing-function: ease-out;
-
  }
  .fg:hover, .fg:focus, .fg:active{
    opacity: 1;
  }
 
  /* Description block */
-.description-section * {
-  //display: flex;
-  border: aqua solid;
-}
+//.description-section * {
+  //border: aqua solid;
+//}
 .description-section {
-  border: aqua solid;
+  //border: aqua solid;
 
   display: flex;
+  flex-direction: column;
   background-size: cover;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 2% 10% 2% 10%;
 
   .descr {
-    display: inline-flex;
-    margin: 2rem;
-    width: 40%;
+    display: flex;
+    margin: 0 auto 2rem auto;
+    //width: 40%;
     align-items: center;
+    text-align: justify;
+    @media only screen  and (max-width : 600px){
+      flex-direction: column;
+      margin: 0 auto 0.8rem auto;
+      width: 100%;
+    }
   }
 }
 .img-descr{
@@ -154,22 +337,22 @@ body {
   flex-shrink: 0;
   width: 62px;
   height: 62px;
-
 }
 .text-descr {
   text-transform: uppercase;
+  text-align: justify;
   padding: 2%;
 }
 
 /* To delete:*/
-.feedback>* {
-  border: greenyellow solid;
-
-}
-.feed-item>*{
-  border: aqua solid;
-}
-.feedback{
+//.feedback-container>* {
+//  border: greenyellow solid;
+//
+//}
+//.feed-item>*{
+//  border: aqua solid;
+//}
+.feedback-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -177,23 +360,34 @@ body {
   padding: 2% 10% 2% 10%;
 }
 .feed-title{
-  display: flex;
-  justify-content: center;
-  font-family: 'Russo One', sans-serif;
-  font-size: 28px;
-  font-weight: 500;
+  @extend %section-title;
+  margin-bottom: 2rem;
+  @media only screen  and (max-width : 600px){
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
 }
 .feed-item{
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   .feed-name {
     font-weight: 700;
     text-transform: uppercase;
   }
+  @media only screen  and (max-width : 600px){
+    flex-direction: column;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
 }
 .feed-img{
-  display: block;
+  display: flex;
   flex-shrink: 0;
   width: 200px;
   height: 200px;
@@ -210,53 +404,74 @@ body {
   padding: 3%;
 }
 
-/*to delete:*/
-.delivery{
-  border: greenyellow solid;
-  >*{
-  border: greenyellow solid;
-
-}
-}
+///*to delete:*/
+//.delivery{
+//  border: greenyellow solid;
+//  >*{
+//  border: greenyellow solid;
+//
+//}
+//}
 
 .delivery {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  //align-items: center;
   background-size: cover;
+  background-position: center;
+
   padding: 2% 10% 2% 10%;
+  //min-height: 350px;
 
 }
 .delivery-title{
-  display: flex;
-  text-align: center;
-  //margin: auto;
-  max-width: 440px;
-  max-height: 2rem;
-  background-color: rgba(0, 0, 0, 0.39);
-  border-radius: 5px;
-  padding: 2% 10% 2% 10%;
-  //height: 54px;
-  //width: 440px;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Russo One', sans-serif;
-  font-size: 28px;
-  font-weight: 500;
+  @extend %section-title;
 }
-.delivery-delivery{
-  display: flex;
-  align-self: flex-end;
-  justify-self: flex-end;
-  padding: 2%;
-  max-width: 440px;
-  //width: 30%;
-  flex-direction: column;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 5px;
-  justify-content: center;
-  align-items: start;
+.delivery-content{
+  @extend %content-item;
+  //display: flex;
+  ////padding: 2%;
+  ////flex-direction: column;
+  //margin-top: 1rem;
+  //margin-bottom: 1rem;
+  //background-color: rgba(0, 0, 0, 0.7);
+  //border-radius: 5px;
+  //justify-content: center;
+  //
+}
 
+
+.at-btn-bg{
+  display: none;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 84px;   /* Высоту кнопки в неактивном состояние*/
+  width: 84px;    /* Ширина кнопки в неактивном состояние*/
+  position: fixed;
+  right: 2%;
+  bottom: 2%;       /* Расположение в браузере по y */
+  opacity: 0.9;
+  @media only screen  and (max-width : 600px) {
+    right: 4%;
+    bottom: 4%;       /* Расположение в браузере по y */
+
+  }
+}
+.at-btn-fg {
+  @extend .at-btn-bg;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+//.at-btn-fg:hover {
+//  opacity: 1;
+//}
+.footer-section{
+  display: flex;
+  justify-content: center;
+  color: #aaaaaa;
 }
