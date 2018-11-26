@@ -46,7 +46,7 @@ window.onclick = function(event) {
 //Part 2
 const request = (dataString) => {
     console.log(dataString);
-    $.post("mock.json",
+    $.post("create-order",
         dataString,
         function(data, status){
             if (status === 'success' & data === "accepted") {
@@ -56,23 +56,72 @@ const request = (dataString) => {
                 modalBad.style.display = "block";
 
             }
-        });
+        }).fail(() => {
+        modalBad.style.display = "block";
+    });
 };
 
 
 const btnAtTrigger = () => {
     //Btns
+    const btnAtCB = $('.at-btn-bg');
+    const btnAtCF = $('.at-btn-fg');
     if ($(btnT).visible(true) || $(btnB).visible(true)) {
-        // console.log('vis');
-        $('.at-btn-bg').css('display', 'none');
-        $('.at-btn-fg').css('display', 'none')
+        if (btnAtCB.css('display') === 'block') {
+            console.log('BLOCK');
+            // console.log('vis');
+            btnAtCB.css('display', 'none');
+            btnAtCF.css('display', 'none');
+            $('.purchase-btn').animate({
+                width: "+=10px",
+            }, 80).animate({
+                width: "-=20px",
+            }, 80).animate({
+                width: "+=20px",
+            }, 80).animate({
+                width: "-=10px",
+            }, 80).animate({
+                width: "+=10px",
+            }, 80).animate({
+                width: "-=20px",
+            }, 80).animate({
+                width: "+=20px",
+            }, 80).animate({
+                width: "-=10px",
+            }, 80);
+        }
     } else {
-        // console.log('hid');
-        $('.at-btn-bg').css('display', 'block');
-        $('.at-btn-fg').css('display', 'block')
-
+        if (btnAtCB.css('display') === 'none') {
+            console.log('NONE');
+            // console.log('hid');
+            btnAtCB.css('display', 'block').animate({
+                height: "+=10px",
+                width: "+=10px",
+            }, 50).animate({
+                height: "-=10px",
+                width: "-=10px",
+            }, 100).animate({
+                height: "+=10px",
+                width: "+=10px",
+            }, 50).animate({
+                height: "-=10px",
+                width: "-=10px",
+            }, 100).animate({
+                height: "+=10px",
+                width: "+=10px",
+            }, 50).animate({
+                height: "-=10px",
+                width: "-=10px",
+            }, 100).animate({
+                height: "+=10px",
+                width: "+=10px",
+            }, 50).animate({
+                height: "-=10px",
+                width: "-=10px",
+            }, 100);
+            btnAtCF.css('display', 'block');
+        }
     }
-
 };
 
 const dataFormer = (arr) => {

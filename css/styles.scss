@@ -276,11 +276,19 @@ a.menu-item:active {
   }
 
 }
+
+.btn-wrapper{
+  display: flex;
+  width: 300px;
+  height: 82px;
+  margin: auto auto 2rem auto;
+
+}
 .purchase-btn{
   display: flex;
   width: 280px;
   height: 62px;
-  margin: auto auto 2rem auto;
+  margin: auto;
 }
 .bg{
     background-size: cover;
