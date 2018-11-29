@@ -1,0 +1,17 @@
+.push-btn{
+  width: 280px;
+  height: 62px;
+  margin: auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #666;
+  font-size: 1.3rem;
+  font-family: 'Russo One', sans-serif;
+}
+
+.push-btn:active {
+  position: relative;
+  top: 2px;
+
+}

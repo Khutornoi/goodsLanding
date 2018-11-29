@@ -13,6 +13,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js"></script>
 </head>
 <body>
+
+<!--Button style start-->
+<style type="text/css">
+    button.push-btn {
+        background: -moz-linear-gradient(#A1A4A6, #020608, #A1A4A6);
+        background: -webkit-gradient(linear, 0 0, 0  100%, from(#A1A4A6), to(#A1A4A6), color-stop(0.5, #020608));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+        padding: 3px 7px;
+        color: white;
+    }
+    button.push-btn:hover {
+        color: #0E7EE3;
+    }
+    button.push-btn:active {
+        color: #0E7EE3;
+
+    }
+</style>
+
+<!--Button style end-->
     <header class="top-container" style="background-image: url(./img/top-background.jpg)">
 
 <!-- Navigation section start -->
@@ -61,13 +81,17 @@
                         <div class="smalltext">Секунды</div>
                     </div>
                 </div>
-                    <div id="purchase-btnT" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
-                    <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
-                    </div>
+                    <!--<div id="purchase-btnT" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">-->
+                    <!--<div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>-->
+                    <!--</div>-->
+                <button id="purchase-btnT" class="push-btn">
+                    ЗАКАЗАТЬ СО СКИДКОЙ
+                </button>
+
             </section>
-            <section class="main-photo">
-                <div><img src="./img/main-photo.png" alt="goods"></div>
-            </section>
+            <!--<section class="main-photo">-->
+                <!--<div><img src="./img/main-photo.png" alt="goods"></div>-->
+            <!--</section>-->
         </main>
 <!-- Main Top section end-->
     </header>
@@ -90,10 +114,10 @@
     <section class="feedback-container" style="background-image: url(./img/feedback-bg.jpg)">
 
         <div class="feed-title">ОТЗЫВЫ ПОКУПАТЕЛЕЙ</div>
-        <div class="feed-item"><div style="background-image: url(./img/customer-1.jpg)" class="feed-img"></div>
+<div class="feed-group">        <div class="feed-item"><div style="background-image: url(./img/customer-1.jpg)" class="feed-img"></div>
             <div class="feed-content">
                 <div class="feed-name">Иван Петренко</div>
-                <div class="feed-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur at beatae consequuntur cumque ea, earum est illum itaque magnam maiores necessitatibus perspiciatis, ratione, reiciendis reprehenderit vel voluptatibus! Dicta, maiores.</div>
+                <div class="feed-text">Lorem ipsum dolor sit amet, .</div>
             </div>
         </div>
         <div class="feed-item">
@@ -106,9 +130,9 @@
         <div class="feed-item"><div style="background-image: url(./img/customer-3.jpg)" class="feed-img"></div>
             <div class="feed-content">
                 <div class="feed-name">Тарас Шевченко</div>
-                <div class="feed-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid beatae consequatur cupiditate facilis id itaque laudantium magni necessitatibus nemo, nihil nisi nulla optio praesentium sunt tempora tempore temporibus vero voluptate!</div>
+                <div class="feed-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid beatae consequatur cupiditate facilis id itaque laudantium magni !</div>
             </div>
-        </div>
+        </div></div>
     </section>
 <!-- Feedback section end -->
 
@@ -159,13 +183,16 @@
                 </div>
             </div>
 
-            <div id="purchase-btnB" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">
-                <div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>
-            </div>
+            <!--<div id="purchase-btnB" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">-->
+                <!--<div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>-->
+            <!--</div>-->
+            <button id="purchase-btnB" class="push-btn">
+                ЗАКАЗАТЬ СО СКИДКОЙ
+            </button>
         </section>
-        <section class="main-photo">
-            <div><img src="./img/main-photo.png" alt="goods"></div>
-        </section>
+        <!--<section class="main-photo">-->
+            <!--<div><img src="./img/main-photo.png" alt="goods"></div>-->
+        <!--</section>-->
     </section></div>
 <!-- Bottom main section end-->
 
@@ -186,9 +213,13 @@
                 <label class="modal-form-item">Введите Ваш номер телефона: <input type="text" name="phone" placeholder="Номер телефона"></label>
                 <label class="modal-form-item">Введите ФИО:<input type="text" name="customerName" placeholder="Фамилия Имя Отчество"></label>
                 <label class="modal-form-item">Город и отделение "Новой Почты": <br/><input type="text" name="address" placeholder="Город, № отделения"></label>
-                <div class="bg purchase-btn mod-btn" style="background-image: url(./img/purchase-bg.png)">
-                    <input id="btnSend" type="submit" class="fg purchase-btn mod-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0" >
-                </div>
+                <!--<div class="bg purchase-btn mod-btn" style="background-image: url(./img/purchase-bg.png)">-->
+                    <!--<input id="btnSend" type="submit" class="fg purchase-btn mod-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0" >-->
+                <!--</div>-->
+                <button id="btnSend" class="push-btn">
+                    ЗАКАЗАТЬ СО СКИДКОЙ
+                </button>
+
             </form>
         </div>
     </div>
@@ -222,9 +253,11 @@
 <!-- Modal window BAD end -->
 
 <!-- Attached button start-->
-    <div id="btnAt" class="at-btn-bg bg" style="background-image: url(./img/buy-now-button-bg.png)">
-        <div class="at-btn-fg fg" style="background-image: url(./img/buy-now-button-fg.png)"></div>
-    </div>
+    <div class="rnd-btn"><a id="btnAt" href="#" class="round yellow">ЗАКАЗАТЬ<span class="round">ЗАКАЗАТЬ СО СКИДКОЙ</span></a></div>
+
+    <!--<div id="btnAt" class="at-btn-bg bg" style="background-image: url(./img/buy-now-button-bg.png)">-->
+        <!--<div class="at-btn-fg fg" style="background-image: url(./img/buy-now-button-fg.png)"></div>-->
+    <!--</div>-->
 <!-- Attached button end -->
 
     <script src="js/script.min.js"></script>

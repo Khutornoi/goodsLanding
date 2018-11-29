@@ -62,30 +62,30 @@ const request = (dataString) => {
 
 const btnAtTrigger = () => {
     //Btns
-    const btnAtCB = $('.at-btn-bg');
-    const btnAtCF = $('.at-btn-fg');
+    const btnAtCB = $('.rnd-btn');
+    const btnAtCF = $('.rnd-btn');
     if ($(btnT).visible(true) || $(btnB).visible(true)) {
         if (btnAtCB.css('display') === 'block') {
             // console.log('BLOCK');
             // console.log('vis');
             btnAtCB.css('display', 'none');
             btnAtCF.css('display', 'none');
-            $('.purchase-btn').animate({
-                width: "+=10px",
-            }, 80).animate({
-                width: "-=20px",
-            }, 80).animate({
-                width: "+=20px",
+            $('.push-btn').animate({
+                width: "+=5px",
             }, 80).animate({
                 width: "-=10px",
             }, 80).animate({
                 width: "+=10px",
             }, 80).animate({
-                width: "-=20px",
+                width: "-=10px",
             }, 80).animate({
-                width: "+=20px",
+                width: "+=10px",
             }, 80).animate({
                 width: "-=10px",
+            }, 80).animate({
+                width: "+=10px",
+            }, 80).animate({
+                width: "-=5px",
             }, 80);
         }
     } else {
