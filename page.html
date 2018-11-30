@@ -2,14 +2,198 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" href="./css/btn-rectang.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="./js/jquery-3.3.1.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-visible/1.2.0/jquery.visible.min.js"></script>
 </head>
 <body>
 
-<a class="purchase-btn blue">
-    <span>заказать со скидкой</span>
-</a>
+<!--Button style start-->
+<style type="text/css">
+    button.push-btn {
+        background: -moz-linear-gradient(#A1A4A6, #020608, #A1A4A6);
+        background: -webkit-gradient(linear, 0 0, 0  100%, from(#A1A4A6), to(#A1A4A6), color-stop(0.5, #020608));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00BBD6', endColorstr='#EBFFFF');
+        padding: 3px 7px;
+        color: white;
+    }
+    button.push-btn:hover {
+        color: #0E7EE3;
+    }
+    button.push-btn:active {
+        color: #0E7EE3;
 
-<button>TEST</button>
+    }
+</style>
+<!--Button style end-->
+
+
+<header class="top-container" style="background-image: url(./img/top-background.jpg)">
+
+
+    <!-- Main Top section start -->
+    <main class="main-container">
+        <section class="goods-text">
+            <div class="goods-title"><h1>Н1 - Название ТОВАРА</h1></div>
+            <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
+            <div class="price">
+                <div class="price-title">
+                    <span>Старая цена</span>
+                    <span>Новая цена</span>
+                </div>
+                <div class="price-value">
+                    <div class="price-old-value" style="background-color: rgb(14, 126, 227); color: rgb(255, 255, 255)">850 грн</div>
+                    <div class="price-new-value" style="background-color: rgb(255, 255, 255); color: rgb(14, 126, 227);">299 грн</div>
+                </div>
+            </div>
+            <div id="clockdiv">
+                <div id="clockdivH">
+                    <span class="days"></span>
+                    <div class="smalltext">Дни</div>
+                </div>
+                <div class="clock-div">
+                    <span class="hours" ></span>
+                    <div class="smalltext">Часы</div>
+                </div>
+                <div class="clock-div">
+                    <span class="minutes"></span>
+                    <div class="smalltext">Минуты</div>
+                </div>
+                <div class="clock-div">
+                    <span class="seconds"></span>
+                    <div class="smalltext">Секунды</div>
+                </div>
+            </div>
+            <button id="purchase-btnT" class="push-btn">
+                ЗАКАЗАТЬ СО СКИДКОЙ
+            </button>
+
+        </section>
+    </main>
+    <!-- Main Top section end-->
+</header>
+
+
+
+
+
+<!-- Bottom main section start -->
+<div class="top-container" style="background-image: url(./img/top-background.jpg)" hidden >    <section class="main-container">
+    <section class="goods-text">
+        <div class="goods-title"><h1>Н1 - Название ТОВАРА</h1></div>
+        <div class="discount" style="color: rgb(14, 126, 227);">СО СКИДКОЙ</div>
+        <div class="price">
+            <div class="price-title">
+                <span>Старая цена</span>
+                <span>Новая цена</span>
+            </div>
+            <div class="price-value">
+                <div class="price-old-value" style="background-color: rgb(14, 126, 227); color: rgb(255, 255, 255)">850 грн</div>
+                <div class="price-new-value" style="background-color: rgb(255, 255, 255); color: rgb(14, 126, 227);">299 грн</div>
+            </div>
+        </div>
+        <div id="clockdivB">
+            <div id="clockdivHB">
+                <span class="days"></span>
+                <div class="smalltext">Дни</div>
+            </div>
+            <div class="clock-div">
+                <span class="hours" ></span>
+                <div class="smalltext">Часы</div>
+            </div>
+            <div class="clock-div">
+                <span class="minutes"></span>
+                <div class="smalltext">Минуты</div>
+            </div>
+            <div class="clock-div">
+                <span class="seconds"></span>
+                <div class="smalltext">Секунды</div>
+            </div>
+        </div>
+
+        <!--<div id="purchase-btnB" class="bg purchase-btn" style="background-image: url(./img/purchase-bg.png)">-->
+        <!--<div class="fg purchase-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0"></div>-->
+        <!--</div>-->
+    </section>
+    <!--<section class="main-photo">-->
+    <!--<div><img src="./img/main-photo.png" alt="goods"></div>-->
+    <!--</section>-->
+</section></div>
+<!-- Bottom main section end-->
+<button id="purchase-btnB" class="push-btn" hidden>
+    ЗАКАЗАТЬ СО СКИДКОЙ
+</button>
+
+<footer class="footer-section">
+    <p>&copy; 2018<p>
+</footer>
+
+<!-- Modal window Purchase start-->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-title" style="color: rgb(14, 126, 227);">НАЗВАНИЕ ТОВАРА</div>
+        <div class="separator"></div>
+        <div class="modal-photo">
+            <img src="./img/main-photo.png" alt="goods">
+        </div>
+        <form id="formPurchase" action="#">
+            <label class="modal-form-item">Введите Ваш номер телефона: <input type="text" name="phone" placeholder="Номер телефона"></label>
+            <label class="modal-form-item">Введите ФИО:<input type="text" name="customerName" placeholder="Фамилия Имя Отчество"></label>
+            <label class="modal-form-item">Город и отделение "Новой Почты": <br/><input type="text" name="address" placeholder="Город, № отделения"></label>
+            <!--<div class="bg purchase-btn mod-btn" style="background-image: url(./img/purchase-bg.png)">-->
+            <!--<input id="btnSend" type="submit" class="fg purchase-btn mod-btn" style="background-image: url(./img/purchase-fg.png)" tabindex="0" >-->
+            <!--</div>-->
+            <button id="btnSend" class="push-btn">
+                ЗАКАЗАТЬ СО СКИДКОЙ
+            </button>
+
+        </form>
+    </div>
+</div>
+<!-- Modal window Purchase end-->
+
+<!-- Modal window OK start -->
+<div id="modalOk" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="./img/ok.png" alt="OK!">
+        <div class="mod-stat">
+            <span>Ваш заказ принят!</span><br/>
+            <span>Наш менеджер свяжется с вами в ближайшее время</span><br/>
+            <span>Спасибо за покупку!</span>
+        </div>
+    </div>
+</div>
+<!-- Modal window OK end -->
+
+<!-- Modal window BAD start -->
+<div id="modalBad" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img src="./img/sorry.png" alt="OK!">
+        <div class="mod-stat">
+            <span>Возникла ошибка связи...</span>
+            <span>Попробуйте повторить заказ позже</span>
+        </div>
+    </div>
+</div>
+<!-- Modal window BAD end -->
+
+<!-- Attached button start-->
+<div class="rnd-btn"><a id="btnAt" href="#" class="round yellow">ЗАКАЗАТЬ<span class="round">ЗАКАЗАТЬ СО СКИДКОЙ</span></a></div>
+
+<!--<div id="btnAt" class="at-btn-bg bg" style="background-image: url(./img/buy-now-button-bg.png)">-->
+<!--<div class="at-btn-fg fg" style="background-image: url(./img/buy-now-button-fg.png)"></div>-->
+<!--</div>-->
+<!-- Attached button end -->
+
+<script src="js/script.min.js"></script>
+</body>
 </html>
