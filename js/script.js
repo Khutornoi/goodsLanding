@@ -43,6 +43,17 @@ window.onclick = function(event) {
 };
 
 //Part 2
+// const hdrs = {
+//     'X-CSRF-TOKEN': 'QQQ'
+//         // $('meta[name="csrf-token"]').attr('content')
+// };
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+        // 'CUST_M': "Valuechko"
+    }
+});
+
 const request = (dataString) => {
     // console.log(dataString);
     $.post("create-order",
@@ -123,15 +134,18 @@ const btnAtTrigger = () => {
 };
 
 const dataFormer = (arr) => {
+    console.log('Arr: ', arr);
     let result = {};
     arr.forEach((item) => {
-        // console.log(item);
+        console.log(item);
         result[item.name] = item.value;
     });
+    console.log('res: ', result);
+    result = {...result, lending_id: window.location.pathname};
+    console.log('result: ');
+    console.log(JSON.stringify(result));
     return JSON.stringify(result);
-    // console.log('result: ');
-    // console.log(JSON.stringify(result));
-}
+};
 
 $( "#formPurchase" ).on( "submit", function( event ) {
     event.preventDefault();
