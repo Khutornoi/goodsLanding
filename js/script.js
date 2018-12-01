@@ -57,8 +57,10 @@ $.ajaxSetup({
 const request = (dataString) => {
     // console.log(dataString);
     $.post("create-order",
-        dataString,
+        // dataString,
+        {data:dataString},
         function(data, status){
+            // console.log(data);
             if (status === 'success' & data === "accepted") {
                 modalOk.style.display = "block";
 
@@ -259,11 +261,11 @@ fAddInfo.oninput = () => {
 
 function formValidate() {
     let flag = true;
-    if (fPone.value == '') {
+    if (!(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(fPone.value))) {
         flag = false;
         fPone.style.borderColor ='red';
     }
-    if (fEmail.value == '') {
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(fEmail.value))) {
         flag = false;
         fEmail.style.borderColor ='red';
     }
@@ -276,7 +278,7 @@ function formValidate() {
         fAddInfo.style.borderColor ='red';
     }
 
-    if (fPone.value == '' || fEmail.value == '' || fName == '' || fAddInfo == '') {
+    if (flag === false) {
         window.alert('Пожалуйста, заполните все поля')
     }
     return flag;
