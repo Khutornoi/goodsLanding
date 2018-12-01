@@ -149,11 +149,13 @@ const dataFormer = (arr) => {
 
 $( "#formPurchase" ).on( "submit", function( event ) {
     event.preventDefault();
-    modal.style.display = "none";
+
     let formDataString = $(this).serializeArray();
     // console.log(formDataString);
-
-    request(dataFormer(formDataString));
+    if (formValidate()){
+        modal.style.display = "none";
+        request(dataFormer(formDataString));
+    }
 });
 
 // Menu
@@ -233,3 +235,50 @@ function initializeClock(id, endtime) {
 var deadline = new Date(Date.parse(new Date()) + 15 * 14 * 28 * 33 * 1000); // for endless timer
 initializeClock('clockdiv', deadline);
 //COUNTER END
+
+
+//Validate form start
+const fPone = document.forms ['formPurchase']['phone'];
+// const fPone = $('#formPurchase input[name=phone]');
+const fEmail = document.forms ['formPurchase']['email'];
+const fName = document.forms ['formPurchase']['full_name'];
+const fAddInfo = document.forms ['formPurchase']['additional_information'];
+
+fPone.oninput = () => {
+    fPone.style.borderColor ='initial';
+};
+fEmail.oninput = () => {
+    fEmail.style.borderColor ='initial';
+};
+fName.oninput = () => {
+    fName.style.borderColor ='initial';
+};
+fAddInfo.oninput = () => {
+    fAddInfo.style.borderColor ='initial';
+};
+
+function formValidate() {
+    let flag = true;
+    if (fPone.value == '') {
+        flag = false;
+        fPone.style.borderColor ='red';
+    }
+    if (fEmail.value == '') {
+        flag = false;
+        fEmail.style.borderColor ='red';
+    }
+    if (fName.value == '') {
+        flag = false;
+        fName.style.borderColor ='red';
+    }
+    if (fAddInfo.value == '') {
+        flag = false;
+        fAddInfo.style.borderColor ='red';
+    }
+
+    if (fPone.value == '' || fEmail.value == '' || fName == '' || fAddInfo == '') {
+        window.alert('Пожалуйста, заполните все поля')
+    }
+    return flag;
+}
+//Validate form end
