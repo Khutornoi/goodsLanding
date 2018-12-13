@@ -147,7 +147,7 @@ var dataFormer = function dataFormer(arr) {
     return JSON.stringify(result);
 };
 
-$( "#btnSend" ).on( "click", function( event ) {
+$( "#formPurchase" ).on( "submit", function( event ) {
     event.preventDefault();
 
     var formDataString = $(this).serializeArray();
