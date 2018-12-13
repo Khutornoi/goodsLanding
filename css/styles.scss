@@ -200,14 +200,23 @@ a.menu-item:active {
   font-size: 2.4em;
   margin: 2em auto auto auto;
 }
+
+.photo-spacer{
+  margin: auto;
+  height: 20rem;
+}
 .discount{
   font-size: 2.4em;
-  margin: 0 auto 0 auto;
+  margin: 1rem auto 0.5rem auto;
 }
 
+.timer-section{
+  display: flex;
+  flex-direction: column;
+}
 /* Price section */
 .price {
-  margin: 2em auto auto auto;
+  margin: auto;
   width: 380px;
   @media only screen  and (max-width : 600px) {
     width: 280px;
